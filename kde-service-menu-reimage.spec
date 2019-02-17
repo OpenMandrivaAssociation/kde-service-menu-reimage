@@ -37,7 +37,7 @@ install -m 644 doc/* %{buildroot}%{_docdir}%{name}/
 
 
 %files
-%{_kf5_bindir}/*
-%{_kf5_services}/*.desktop
-%{_docdir}%{name}/
+#{_kf5_bindir}/*
+#{_kf5_services}/*.desktop
+#{_docdir}%{name}/
     
