@@ -27,11 +27,17 @@ It's similar to gnome nautilus actions. These actions are related to picture fil
 %build
 
 %install
+mkdir -p %{buildroot}%{_kf5_bindir}
+mkdir -p %{buildroot}%{_kf5_services}
+mkdir -p %{buildroot}%{_docdir}%{name}
 
-install -m 755 bin/* "${bin_dir}"
-install -m 644 ServiceMenus/*.desktop "${desktop_dir}"
-install -d "${doc_dir}"
-install -m 644 doc/* "${doc_dir}"
+install -m 644 ServiceMenus/*.desktop %{buildroot}%{_kf5_services}/
+install -m 755 bin/* %{buildroot}%{_kf5_bindir}/
+install -m 644 doc/* %{buildroot}%{_docdir}%{name}/
+
 
 %files
+%{_kf5_bindir}/*
+%{_kf5_services}/*.desktop
+%{_docdir}%{name}/
     
