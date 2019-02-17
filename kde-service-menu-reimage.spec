@@ -22,7 +22,7 @@ adding many additionally sensible menu, reachables with right click on the files
 It's similar to gnome nautilus actions. These actions are related to picture files.
 
 %prep
-%setup -qn %{name}-{version}_all
+%setup -qn %{name}-%{version}_all
 
 %build
 
