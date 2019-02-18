@@ -10,6 +10,7 @@ Source0:        %{name}-%{version}_all.tar.gz
 
 BuildRequires:  imagemagick
 BuildRequires:  jhead
+BuildRequires:	cmake(ECM)
 
 Requires: imagemagick
 Requires: jhead
