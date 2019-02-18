@@ -10,6 +10,7 @@ Source0:        %{name}-%{version}_all.tar.gz
 
 BuildRequires:  imagemagick
 BuildRequires:  jhead
+BuildRequires:	cmake(ECM)
 
 Requires: imagemagick
 Requires: jhead
@@ -27,18 +28,17 @@ It's similar to gnome nautilus actions. These actions are related to picture fil
 %build
 
 %install
+mkdir -p %{buildroot}%_kde5_bindir
+mkdir -p %{buildroot}%_kde5_services
+mkdir -p %{buildroot}%{_docdir}%{name}
 
-bin_dir="$(kf5-config --path exe | sed "s/.*://")"
-    install -d "${pkgdir}${bin_dir}"
-    install -m 755 ${source_path}/bin/* "${pkgdir}${bin_dir}"
+install -m 644 ServiceMenus/*.desktop %{buildroot}%_kde5_services/
+install -m 755 bin/* %{buildroot}%_kde5_bindir/
+install -m 644 doc/* %{buildroot}%{_docdir}%{name}/
 
-    desktop_dir="$(kf5-config --path services | sed "s/.*://")ServiceMenus/"
-    install -d "${pkgdir}${desktop_dir}"
-    install -m 644 ${source_path}/ServiceMenus/*.desktop "${pkgdir}${desktop_dir}"
 
-    doc_dir="$(kf5-config --prefix)/share/doc/kde-service-menu-steghide/"
-    install -d "${pkgdir}${doc_dir}"
-    install -m 644 ${source_path}/doc/* "${pkgdir}${doc_dir}"
-    
-    %files
+%files
+%_kde5_bindir/*
+%_kde5_services/*.desktop
+%{_docdir}%{name}/
     
