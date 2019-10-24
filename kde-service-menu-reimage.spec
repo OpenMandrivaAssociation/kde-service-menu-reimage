@@ -16,6 +16,7 @@ Requires: imagemagick
 Requires: jhead
 Requires: kdialog
 Requires: dolphin
+Requires: libwebp-tools
 
 %description
 kde-service-menu-reimage is a package that extends the functionalities of Dolphin/Konqueror 
