@@ -1,6 +1,8 @@
+%global debug_package %{nil}
+
 Name:           kde-service-menu-reimage
 Version:        2.5
-Release:        1
+Release:        2
 Summary:        Simple manipulate on images with their metadata
 License:        GPL-3.0
 Group:          Productivity/Graphics/Viewers
@@ -24,7 +26,7 @@ adding many additionally sensible menu, reachables with right click on the files
 It's similar to gnome nautilus actions. These actions are related to picture files.
 
 %prep
-%setup -qn %{name}-%{version}_all
+%autosetup -n %{name}-%{version}_all -p1
 
 %build
 
@@ -36,7 +38,6 @@ mkdir -p %{buildroot}%{_docdir}%{name}
 install -m 644 ServiceMenus/*.desktop %{buildroot}%_kde5_services/
 install -m 755 bin/* %{buildroot}%_kde5_bindir/
 install -m 644 doc/* %{buildroot}%{_docdir}%{name}/
-
 
 %files
 %_kde5_bindir/*
