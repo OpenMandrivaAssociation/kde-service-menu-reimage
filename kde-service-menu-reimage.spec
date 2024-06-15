@@ -32,7 +32,6 @@ It's similar to gnome nautilus actions. These actions are related to picture fil
 %build
 
 %install
-%install
 mkdir -p %{buildroot}%_kde5_bindir
 mkdir -p %{buildroot}%_kde5_services
 mkdir -p %{buildroot}%{_docdir}%{name}
