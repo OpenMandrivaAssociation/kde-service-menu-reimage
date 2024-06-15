@@ -32,16 +32,16 @@ It's similar to gnome nautilus actions. These actions are related to picture fil
 %build
 
 %install
-mkdir -p %{buildroot}%_kde5_bindir
-mkdir -p %{buildroot}%_kde5_services
+mkdir -p %{buildroot}%_bindir
+mkdir -p %{buildroot}/usr/share/kio/servicemenus
 mkdir -p %{buildroot}%{_docdir}%{name}
 
-install -m 644 ServiceMenus/*.desktop %{buildroot}%_kde5_services/
-install -m 755 bin/* %{buildroot}%_kde5_bindir/
+install -m 644 ServiceMenus/*.desktop %{buildroot}/usr/share/kio/servicemenus/
+install -m 755 bin/* %{buildroot}%_bindir/
 install -m 644 doc/* %{buildroot}%{_docdir}%{name}/
 
 %files
-%_kde5_bindir/*
-%_kde5_services/*.desktop
+%_bindir/*
+%{_datadir}/kio/servicemenus*.desktop
 %{_docdir}%{name}/
     
