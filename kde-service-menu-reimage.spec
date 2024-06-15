@@ -42,6 +42,6 @@ install -m 644 doc/* %{buildroot}%{_docdir}%{name}/
 
 %files
 %_bindir/*
-%{_datadir}/kio/servicemenus*.desktop
+%{_datadir}/kio/servicemenus/
 %{_docdir}%{name}/
     
