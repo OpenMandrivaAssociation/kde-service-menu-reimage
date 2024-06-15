@@ -2,7 +2,7 @@
 
 Name:           kde-service-menu-reimage
 Version:        2.6.0
-Release:        0-beta.2
+Release:        0.beta.2
 Summary:        Simple manipulate on images with their metadata
 License:        GPL-3.0
 Group:          Productivity/Graphics/Viewers
